@@ -2,17 +2,6 @@
 
 This project demonstrates how to use Google's Gemini AI API to generate content.
 
-## Setup
-
-step 1: npm init -y
-step 2: npm install dotenv @google/genai
-step 3: tambahkan "type": "module" di package.json
-step 4: copy & paste base code dari ai google studio
-step 5: import 'dotenv/config'
-step 6: buat file .env lalu isi dengan GEMINI_API_KEY={apikey kalian}
-step 7: ketika initiate GoogleGenAI, tambahkan property apiKey: process.env.GEMINI_API_KEY
-step 8: ubah model sesuai dengan yang diinginkan
-
 ## How to Run
 
 1. Ensure you have Node.js installed.
