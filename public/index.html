@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muslim AI Assistant</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Main Dashboard -->
+  <div class="dashboard">
+    <header class="header">
+      <h1><i class="fas fa-mosque"></i> Muslim AI Assistant</h1>
+      <p>Pendamping Spiritual Anda dengan AI</p>
+    </header>
+
+    <div class="content-grid">
+      <!-- Prayer Times -->
+      <div class="card prayer-times">
+        <div class="card-header">
+          <i class="fas fa-clock"></i>
+          <h3>Waktu Shalat</h3>
+        </div>
+        <div class="card-content">
+          <div id="prayer-times" class="prayer-list">
+            <div class="loading">Memuat waktu shalat...</div>
+          </div>
+          <div class="location-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <span id="location">Jakarta, Indonesia</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Random Hadith -->
+      <div class="card hadith">
+        <div class="card-header">
+          <i class="fas fa-book-open"></i>
+          <h3>Hadits Hari Ini</h3>
+        </div>
+        <div class="card-content">
+          <div id="hadith-content" class="hadith-text">
+            <div class="loading">Memuat hadits...</div>
+          </div>
+          <button id="new-hadith" class="btn-secondary">
+            <i class="fas fa-random"></i> Hadits Lain
+          </button>
+        </div>
+      </div>
+
+      <!-- Daily Practices -->
+      <div class="card daily-practices">
+        <div class="card-header">
+          <i class="fas fa-tasks"></i>
+          <h3>Amalan Harian</h3>
+        </div>
+        <div class="card-content">
+          <div id="daily-practices" class="practice-list">
+            <div class="practice-item">
+              <input type="checkbox" id="practice-1">
+              <label for="practice-1">Sholat Subuh</label>
+            </div>
+            <div class="practice-item">
+              <input type="checkbox" id="practice-2">
+              <label for="practice-2">Membaca Al-Quran</label>
+            </div>
+            <div class="practice-item">
+              <input type="checkbox" id="practice-3">
+              <label for="practice-3">Dzikir Pagi</label>
+            </div>
+            <div class="practice-item">
+              <input type="checkbox" id="practice-4">
+              <label for="practice-4">Sedekah</label>
+            </div>
+            <div class="practice-item">
+              <input type="checkbox" id="practice-5">
+              <label for="practice-5">Sholat Dzuhur</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Widget -->
+  <div id="chat-widget" class="chat-widget">
+    <div class="chat-toggle" id="chat-toggle">
+      <i class="fas fa-comments"></i>
+      <span class="notification-badge" id="notification-badge" style="display: none;">1</span>
+    </div>
+
+    <div class="chat-container" id="chat-container">
+      <div class="chat-header">
+        <h4><i class="fas fa-robot"></i> AI Assistant</h4>
+        <button class="close-chat" id="close-chat">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div id="chat-box" class="chat-box"></div>
+
+      <form id="chat-form" class="chat-form">
+        <input type="text" id="user-input" placeholder="Tanya tentang Islam..." autocomplete="off" required />
+        <button type="submit">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Falling Stars Animation -->
+  <div class="stars-container" id="stars-container"></div>
+
+  <!-- Shalawat Music Controls -->
+  <div class="music-controls" id="music-controls">
+    <button id="play-pause-btn">
+      <i class="fas fa-play"></i>
+    </button>
+    <div class="music-info">
+      <div class="music-title">Shalawat Nabi</div>
+      <div class="music-artist">Musik Islami</div>
+    </div>
+    <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+    <audio id="shalawat-audio" loop preload="none">
+      <!-- You can replace these with actual shalawat audio URLs or local files -->
+      <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+      <!-- Alternative shalawat sources (uncomment and replace with actual URLs):
+      <source src="shalawat-nabi.mp3" type="audio/mpeg">
+      <source src="https://example.com/shalawat.mp3" type="audio/mpeg">
+      -->
+      Browser Anda tidak mendukung pemutaran audio.
+    </audio>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
